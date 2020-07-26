@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Apartment {
 
+    // Apartments Class
     private Integer apartmentId;
     private Integer userId;
 
@@ -11,7 +12,6 @@ public class Apartment {
         this.apartmentId = aptId;
         this.userId = userId;
     }
-
 
     public Integer getApartmentId() {
         return apartmentId;
