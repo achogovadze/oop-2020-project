@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class Apartment {
 
-    // Apartments Class
     private Integer apartmentId;
     private Integer userId;
 
