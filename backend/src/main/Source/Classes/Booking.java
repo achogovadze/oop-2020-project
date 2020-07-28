@@ -6,15 +6,15 @@ import java.util.Objects;
 public class Booking {
 
     private Integer userId;
-    private Date checkInDate;
-    private Date checkOutDate;
+    private String checkInDate;
+    private String checkOutDate;
     private Integer apartmentId;
     private Double totalPrice;
     private String paymentCurrency;
     private Integer bookingId;
 
 
-    public Booking(Integer userId, Date checkInDate, Date checkOutDate, Integer apartmentId,
+    public Booking(Integer userId, String checkInDate, String checkOutDate, Integer apartmentId,
                    Double totalPrice, String paymentCurrency, Integer bookingId) {
         this.userId = userId;
         this.checkInDate = checkInDate;
@@ -33,19 +33,19 @@ public class Booking {
         this.userId = userId;
     }
 
-    public Date getCheckInDate() {
+    public String getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(Date checkInDate) {
+    public void setCheckInDate(String checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckOutDate () {
+    public String getCheckOutDate () {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(Date checkOutDate) {
+    public void setCheckOutDate(String checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 

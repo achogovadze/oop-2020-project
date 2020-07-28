@@ -42,16 +42,22 @@ public class BookingsDB {
         return db;
     }
 
-    public void book (Date checkInDate, Date checkOutDate, Integer userId, Integer apartmentId, Double totalPrice, String paymentCurrency) throws SQLException {
+    public boolean book(String checkInDate, String checkOutDate, Integer userId, Integer apartmentId, Double totalPrice, String paymentCurrency) throws SQLException {
         Integer bookingId = -1;
         String query = "INSERT INTO bookings (apartment_id, user_id, check_in_date, check_out_date, total_price, payment_currency) VALUES (?, ?, ?, ?, ?, ?);";
         PreparedStatement stm = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-        stm.setInt(1, apartmentId);
-        stm.setInt(2, userId);
-        stm.setDate(3, (java.sql.Date) checkInDate);
-        stm.setDate(4, (java.sql.Date) checkOutDate);
-        stm.setDouble(5, totalPrice);
-        stm.setString(6, paymentCurrency);
+        try {
+            stm.setInt(1, apartmentId);
+            stm.setInt(2, userId);
+            stm.setString(3, checkInDate);
+            stm.setString(4, checkOutDate);
+            stm.setDouble(5, totalPrice);
+            stm.setString(6, paymentCurrency);
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
     }
 
     public List<Booking> getBookings(Integer apartmentId) throws SQLException {
@@ -62,8 +68,8 @@ public class BookingsDB {
         while (res.next()) {
             Booking booking = new Booking(
                     res.getInt(1),
-                    res.getDate(2),
-                    res.getDate(3),
+                    res.getString(2),
+                    res.getString(3),
                     res.getInt(4),
                     res.getDouble(5),
                     res.getString(6),
