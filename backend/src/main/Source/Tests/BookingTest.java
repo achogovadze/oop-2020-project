@@ -9,31 +9,31 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BookingTest extends TestCase {
 
     public void testBooking() {
-        Booking booking = new Booking(1,"01-01-2020", "02-02-2020",
-                2, 3.00, "GEL", 4);
-        booking.setUserId(5);
+        Booking booking = new Booking(1,2,3,"01-01-2020",
+                "02-02-2020", 4.00 , "GEL");
+        booking.setBookingId(5);
+        booking.setUserId(6);
+        booking.setApartmentId(7);
         booking.setCheckInDate("03-03-2020");
         booking.setCheckOutDate("04-04-2020");
-        booking.setApartmentId(6);
-        booking.setTotalPrice(7.00);
+        booking.setTotalPrice(8.00);
         booking.setPaymentCurrency("USD");
-        booking.setBookingId(8);
 
-        Assertions.assertEquals(5, booking.getUserId());
+        Assertions.assertEquals(5, booking.getBookingId());
+        Assertions.assertEquals(6, booking.getUserId());
+        Assertions.assertEquals(7, booking.getApartmentId());
         Assertions.assertEquals("03-03-2020", booking.getCheckInDate());
         Assertions.assertEquals("04-04-2020", booking.getCheckOutDate());
-        Assertions.assertEquals(6, booking.getApartmentId());
-        Assertions.assertEquals(7.00, booking.getTotalPrice());
+        Assertions.assertEquals(8.00, booking.getTotalPrice());
         Assertions.assertEquals("USD", booking.getPaymentCurrency());
-        Assertions.assertEquals(8, booking.getBookingId());
     }
 
     public void testEquals() {
-        Booking booking = new Booking(1,"01-01-2020", "02-02-2020",
-                2, 3.00, "GEL", 4);
+        Booking booking = new Booking(1,2,3,"01-01-2020",
+                "02-02-2020", 4.00 , "GEL");
 
-        Booking booking2 = new Booking(1,"01-01-2020", "02-02-2020",
-                2, 3.00, "GEL", 4);
+        Booking booking2 = new Booking(1,2,3,"01-01-2020",
+                "02-02-2020", 4.00 , "GEL");
 
         Assertions.assertTrue(booking.equals(booking));
         Assertions.assertFalse(booking.equals(null));
@@ -57,10 +57,10 @@ public class BookingTest extends TestCase {
     }
 
     public void testToString() {
-        Booking booking = new Booking(1,"01-01-2020", "02-02-2020",
-                2, 3.00, "GEL", 4);
-        String result = "Booking{userId=" + 1 + ", checkInDate='01-01-2020', checkOutDate='02-02-2020', apartmentId='" +
-                2 + "', totalPrice='" + 3.00 + "', paymentCurrency='GEL', bookingId='" + 4 + "'}";
+        Booking booking = new Booking(1,2,3,"01-01-2020",
+                "02-02-2020", 4.00 , "GEL");
+        String result = "Booking{userId=" + 2 + ", checkInDate='01-01-2020', checkOutDate='02-02-2020', apartmentId='" +
+                3 + "', totalPrice='" + 4.00 + "', paymentCurrency='GEL', bookingId='" + 1 + "'}";
         Assertions.assertEquals(result, booking.toString());
     }
 }
