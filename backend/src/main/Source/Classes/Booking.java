@@ -14,12 +14,12 @@ public class Booking {
     private Integer bookingId;
 
 
-    public Booking(Integer userId, String checkInDate, String checkOutDate, Integer apartmentId,
-                   Double totalPrice, String paymentCurrency, Integer bookingId) {
+    public Booking(Integer bookingId, Integer userId, Integer apartmentId, String checkInDate, String checkOutDate,
+                   Double totalPrice, String paymentCurrency) {
         this.userId = userId;
+        this.apartmentId = apartmentId;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
-        this.apartmentId = apartmentId;
         this.totalPrice = totalPrice;
         this.paymentCurrency = paymentCurrency;
         this.bookingId = bookingId;

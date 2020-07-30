@@ -27,9 +27,9 @@ public class getBookingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             BookingsDB bookingsDB = new BookingsDB();
-            String apartmentIdString = request.getParameter("apartmentId");
-            Integer apartmentId = Integer.parseInt(apartmentIdString);
-            List<Booking> bookings = bookingsDB.getBookings(apartmentId);
+//            String apartmentIdString = request.getParameter("apartmentId");
+//            Integer apartmentId = Integer.parseInt(apartmentIdString);
+            List<Booking> bookings = bookingsDB.getBookings(1);
             String bookingsJsonString = this.gson.toJson(bookings);
             PrintWriter out = response.getWriter();
             response.setContentType("application/json");
