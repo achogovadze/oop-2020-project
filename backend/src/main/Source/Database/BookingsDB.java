@@ -78,4 +78,30 @@ public class BookingsDB {
         }
         return result;
     }
+
+    public boolean deleteBooking(Integer apartmentId) {
+        try {
+            PreparedStatement stm;
+            stm = connection.prepareStatement("DELETE FROM bookings WHERE apartment_id = " + apartmentId);
+            stm.executeUpdate();
+            commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean deleteBookingByUser(Integer userId) {
+        try {
+            PreparedStatement stm;
+            stm = connection.prepareStatement("DELETE FROM bookings WHERE user_id = " + userId);
+            stm.executeUpdate();
+            commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 }
