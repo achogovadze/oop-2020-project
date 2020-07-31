@@ -1,0 +1,71 @@
+.BigImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.ImagesList img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.BigImageContainer {
+    width: 50%;
+    height: 100%;
+}
+
+.ImagesList {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* padding: 4px 0; */
+}
+
+.SmallImageContainer {
+    width: calc(50% - 16px);
+    height: calc(50% - 4px);
+    position: relative;
+    padding: 4px;
+}
+
+.BigImage {
+    padding: 4px 4px 4px 0;
+    height: 100%;
+}
+
+.SmallImage {
+    height: 100%;
+}
+
+.SmallImageLast {
+    height: 100%;
+}
+
+.SmallImageLast img {
+    filter: blur(1.5px);
+}
+
+.Icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35%;
+    left: 40%;
+    z-index: 1;
+    color: white;
+    font-size: 15px;
+}
+
+.Icon svg {
+    color: white;
+    margin-right: 5px;
+}
+
+.Dialog {
+    padding-top: 30px;
+}
