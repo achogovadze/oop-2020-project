@@ -1,0 +1,220 @@
+.IconsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.Icon {
+    margin-top: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    box-shadow: 0 16px 32px 0 rgba(0,42,77,.05);
+    width: 180px;
+}
+
+.IconDark {
+    margin-top: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    box-shadow: 0 0 16px #272727;
+    width: 180px;
+}
+
+.Label {
+    color: #212121;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.LabelDark {
+    color: #f3eee6;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Text {
+    color: #212121;
+    line-height: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.TextDark {
+    color: #f3eee6;
+    line-height: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.IntroText {
+    text-align: left;
+    line-height: 1.6;
+    z-index: 1;
+}
+
+.IntroTextDark {
+    text-align: left;
+    line-height: 1.6;
+    z-index: 1;
+    color: #f3eee6;
+}
+
+.IntroTextArea {
+    box-shadow: 0 16px 32px 0 rgba(0,42,77,.05);
+    background-color: #f3eee6;
+    margin-top: 30px;
+    padding: 50px;
+    /* opacity: .55; */
+    z-index: 1;
+    font-size: 15px;
+}
+
+.IntroTextAreaDark {
+    box-shadow: 0 0 16px #272727;
+    background-color: #212121;
+    margin-top: 30px;
+    padding: 50px;
+    opacity: .85;
+    z-index: 1;
+}
+
+.ImageContainer {
+    position: relative;
+    /* bottom: 400px; */
+    width: 100%;
+    /* left: 224px; */
+    /* position: absolute; */
+
+   /* float: left; */
+    /* bottom: 150px; */
+    /* right: 0; */
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: 700px; */
+    /* opacity: .7; */
+    /* left: 300px; */
+    /* margin-left: 500px; */
+    /* margin-top: -200px; */
+}
+
+.Image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+@media (min-width: 1024px) {
+
+    .IconsList {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .Icon {
+        /* box-shadow: 0 0 6px #333; */
+        /* background-color: #fff; */
+        box-shadow: 0 16px 32px 0 rgba(0,42,77,.05);
+        margin-top: 10px;
+        margin-left: 35px;
+        margin-right: 35px;
+        width: 180px;
+    }
+    .IconDark {
+        box-shadow: 0 0 16px #272727;
+        margin-top: 10px;
+        margin-left: 35px;
+        margin-right: 35px;
+        width: 180px;
+    }
+
+    .Label {
+        color: #212121;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .LabelDark {
+        color: #f3eee6;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .Text {
+        color: #212121;
+        line-height: 24px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .TextDark {
+        color: #f3eee6;
+        line-height: 24px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .IntroText {
+        text-align: left;
+        line-height: 1.6;
+        z-index: 1;
+    }
+    
+    .IntroTextDark {
+        text-align: left;
+        line-height: 1.6;
+        z-index: 1;
+        color: #f3eee6;
+    }
+
+    .IntroTextArea {
+        box-shadow: 0 16px 32px 0 rgba(0,42,77,.05);
+        margin-top: 80px;
+        padding: 50px;
+        width: 900px;
+        background-color: #f3eee6;
+        opacity: .85;
+        z-index: 1;
+    }
+
+    .IntroTextAreaDark {
+        box-shadow: 0 0 16px #272727;
+        background-color: #212121;
+        margin-top: 80px;
+        padding: 50px;
+        width: 900px;
+        opacity: .85;
+        z-index: 1;
+    }
+
+    .ImageContainer {
+        position: relative;
+        bottom: 260px;
+        /* left: 224px; */
+        /* position: absolute; */
+
+       /* float: left; */
+        /* bottom: 150px; */
+        /* right: 0; */
+        /* position: absolute; */
+        /* right: 0; */
+        /* top: 700px; */
+        /* opacity: .7; */
+        /* left: 300px; */
+        /* margin-left: 500px; */
+        /* margin-top: -200px; */
+    }
+
+    .Image {
+        width: 900px;
+        border-radius: 15px;
+    }
+}

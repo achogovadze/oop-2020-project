@@ -1,0 +1,12 @@
+.Intro {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+@media (min-width: 1024px) {
+    .Intro {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }  
+}

@@ -1,0 +1,156 @@
+.ContactArea {
+    max-width: 100%;
+    /* background-color: #0d3b38; */
+    background-color: #212121;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ContactArea h2 {
+    /* margin-bottom: 0; */
+    text-align: left;
+}
+
+.ContactArea hr {
+    display: block;
+    height: 1px;
+    width: 85%;
+    border: 0;
+    border-top: 1px solid grey;
+    margin: 1em 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.ContactArea li {
+    list-style: none;
+    font-size: 14px;
+    color: #69a88d;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.ContactArea li:before {
+    content: "› \0020";
+}
+
+.ContactArea a:hover {
+    color: #f3eee6;
+}
+
+.ContactArea a {
+    text-decoration: none;
+    color: #757575;
+}
+
+.ContactArea ul {
+    padding-left: 0;
+}
+
+.TopArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 30px 50px 30px;
+}
+
+.Container {
+    width: 60%;
+    margin: auto;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.MiddleArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+    padding: 10px 30px 10px 30px;
+}
+
+.MiddleArea h4 {
+    margin-bottom: 0;
+    color: #f3eee6;
+}
+
+.MiddleContainer {
+    /* width: 60%; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: start; */
+    /* align-items: flex-start; */
+    /* margin-left: 0; */
+    /* max-height: 36px; */
+}
+
+.ImageContainer {
+    /* width: 100%; */
+    /* height: 54px; */
+    display: flex;
+    transform: scale(.5,.5);
+}
+
+.ImageContainerLarge {
+    transform: scale(.35,.35);
+}
+
+.Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.BottomArea {
+    background-color: #111111;
+    width: 100%;
+    height: 15%;
+}
+
+.BottomArea p {
+    color: #f3eee6;
+}
+
+@media (min-width: 768px) {
+    .TopArea {
+        padding: 50px 80px 50px 80px;
+    }
+
+    .MiddleContainer {
+        width: 25%;
+    }
+    
+    .ImageContainer {
+        transform: scale(.7,.7);
+    }
+
+    .ImageContainerLarge {
+        transform: scale(.5,.5);
+    }
+
+    .Container {
+        width: auto;
+        margin-left: auto;
+    }
+
+    .MiddleArea {
+        padding: 10px 30px 10px 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .TopArea {
+        padding: 50px 300px 50px 80px;
+    }
+
+    .ContactArea hr {
+        width: 95%;
+    }
+
+    .MiddleArea {
+        padding: 10px 30px 10px 30px;
+    }
+}

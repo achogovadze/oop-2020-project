@@ -1,0 +1,98 @@
+.LabelImageArea {
+    width: 90%;
+}
+
+.LabelImage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.ImageContainer {
+    height: 312px;
+    margin-top: 35px;
+    margin-bottom: 18px;
+}
+
+.Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 8px; */
+}
+
+.LabelArea {
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.Label {
+    color: #073937;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.LabelDark {
+    color: #69a88d;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.TextArea {
+    width: 95%;
+}
+
+.Text {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #073937;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px; /* 28px */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.TextDark {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #69a88d;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px; /* 28px */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 568px) {
+    .LabelImageArea {
+        width: calc((100% - 100px) / 2);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .LabelImageArea {
+        width: calc((100% - 100px) / 4);
+    }
+    
+    .ImageContainer {
+        height: 396px;
+        margin-top: 0;
+    }
+}
