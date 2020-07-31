@@ -105,7 +105,7 @@ public class ApartmentsDB {
                                     Double roomHeight, Integer floorLevel, Integer bedroomsNum, Integer bedsNum,
                                     Integer bathroomsNum, Integer privateBathroom, Integer wifi, String water,
                                     String gas, String electricity, Integer airCondition, String heating,
-                                    Integer washingMachine, Integer oven, Integer dishwasher, Integer dryer,
+                                    String washingMachine, Integer oven, Integer dishwasher, Integer dryer,
                                     Integer desk, Integer balcony, Integer elevator, Integer parking,
                                     Integer vehicleCharger, Integer pool, Integer isAvailable, Double latitude, Double longitude) {
 
@@ -141,7 +141,7 @@ public class ApartmentsDB {
             s.setString(21, electricity);
             s.setInt(22, airCondition);
             s.setString(23, heating);
-            s.setInt(24, washingMachine);
+            s.setString(24, washingMachine);
             s.setInt(25, oven);
             s.setInt(26, dishwasher);
             s.setInt(27, dryer);

@@ -53,7 +53,7 @@ public class addApartmentServlet extends HttpServlet {
             String electricity = request.getParameter("electricity");
             Integer airConditioning = Integer.valueOf(request.getParameter("air_conditioning"));
             String heating = request.getParameter("heating");
-            Integer washingMachine = Integer.valueOf(request.getParameter("washing_machine"));
+            String washingMachine = request.getParameter("washing_machine");
             Integer oven = Integer.valueOf(request.getParameter("oven"));
             Integer dishwasher = Integer.valueOf(request.getParameter("dishwasher"));
             Integer dryer = Integer.valueOf(request.getParameter("dryer"));

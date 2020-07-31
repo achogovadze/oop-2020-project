@@ -30,7 +30,7 @@ public class ApartmentInfo {
     private String electricity;
     private Integer airCondition;
     private String heating;
-    private Integer washingMachine;
+    private String washingMachine;
     private Integer oven;
     private Integer dishwasher;
     private Integer dryer;
@@ -51,7 +51,7 @@ public class ApartmentInfo {
                          Double roomHeight, Integer floorLevel, Integer bedroomsNum, Integer bedsNum,
                          Integer bathroomsNum, Integer privateBathroom, Integer wifi, String water,
                          String gas, String electricity, Integer airCondition, String heating,
-                         Integer washingMachine, Integer oven, Integer dishwasher, Integer dryer,
+                         String washingMachine, Integer oven, Integer dishwasher, Integer dryer,
                          Integer desk, Integer balcony, Integer elevator, Integer parking,
                          Integer vehicleCharger, Integer pool, Integer isAvailable, String apartmentStatus, Double latitude, Double longitude, List<String> imagesList) {
         this.apartmentId = apartmentId;
@@ -294,11 +294,11 @@ public class ApartmentInfo {
         this.heating = heating;
     }
 
-    public Integer getWashingMachine() {
+    public String getWashingMachine() {
         return washingMachine;
     }
 
-    public void setWashingMachine(Integer washingMachine) {
+    public void setWashingMachine(String washingMachine) {
         this.washingMachine = washingMachine;
     }
 
