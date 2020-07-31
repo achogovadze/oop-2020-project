@@ -1,0 +1,87 @@
+.Toolbar {
+    height: 57px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f3eee6;
+    /* border-bottom: 2px solid #ccc; */
+    border-bottom: 1px solid #ccd6dd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 60px;
+    box-sizing: border-box;
+    z-index: 10;
+    transition: .25s ease-out;
+}
+
+.test {
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: 8px;
+    font-weight: 500;
+    color: #69a88d;
+}
+
+.ToolbarDark {
+    height: 57px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #212121;
+    /* border-bottom: 2px solid #171717; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 60px;
+    box-sizing: border-box;
+    z-index: 10;
+    transition: .25s ease-out;
+}
+
+.Toolbar nav {
+    height: 100%;
+    transition: .25s ease-out;
+}
+
+.ToolbarDark nav {
+    height: 100%;
+    transition: .25s ease-out;
+}
+
+.Logo {
+    height: 70%;
+}
+
+.Icon {
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.DarkModeSwitch {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .DesktopOnly {
+        display: none;
+    }
+    
+    .Toolbar {
+        padding: 0 0 0 30px;
+        transition: .25s ease-out;
+}
+
+    .ToolbarDark {
+        padding: 0 0 0 30px;
+        transition: .25s ease-out;
+    }
+
+    .DarkModeSwitch {
+        display: block;
+    }
+}
