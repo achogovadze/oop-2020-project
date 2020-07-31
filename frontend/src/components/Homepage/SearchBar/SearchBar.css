@@ -1,0 +1,27 @@
+/* .SearchBar {
+    position: relative;
+    margin-top: -100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+} */
+
+.SearchBar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: left;
+}   
+
+@media (min-width: 500px) {
+    .SearchBar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: left;
+        justify-content: left;
+    }   
+}

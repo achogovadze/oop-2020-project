@@ -1,0 +1,139 @@
+.Employee {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 32px 32px 32px 32px rgba(0, 23, 43, 0.05);
+    padding: 50px 50px 50px 50px;
+}
+
+.EmployeeDark {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 16px #272727;
+    padding: 50px 50px 50px 50px;
+}
+
+.EmployeeImage {
+    width: 90%;
+    /* margin-left: 50px; */
+    border-radius: 8px;
+    margin-right: 0;
+}
+
+.Textarea {
+    margin-top: 25px;
+    max-width: 90%;
+}
+
+.EmployeeText {
+    line-height: 1.6;
+    text-align: left;
+    font-size: 15px;
+}
+
+.EmployeeSignature {
+    line-height: 1.6;
+    text-align: left;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.EmployeeTextDark {
+    line-height: 1.6;
+    text-align: left;
+    font-size: 15px;
+    color: #f3eee6;
+}
+
+.EmployeeSignatureDark {
+    line-height: 1.6;
+    text-align: left;
+    margin-top: 25px;
+    font-size: 13px;
+    color: #f3eee6;
+}
+
+@media (min-width: 1024px) {
+    .Employee {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        margin-top: 55px;
+        width: 900px;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 32px 32px 32px 32px rgba(0, 23, 43, 0.05);
+        padding: 50px 50px 50px 50px;
+    }
+
+    .EmployeeDark {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        margin-top: 55px;
+        width: 900px;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 16px #272727;
+        padding: 50px 50px 50px 50px;
+    }
+    
+    .EmployeeImage {
+        width: 350px;
+        margin-right: 50px;
+        border-radius: 8px;
+    }
+    
+    .Textarea {
+        max-width: 350px;
+    }
+    
+    .EmployeeText {
+        line-height: 1.6;
+        text-align: left;
+        font-size: 18px;
+    }
+    
+    .EmployeeSignature {
+        line-height: 1.6;
+        text-align: left;
+        margin-top: 25px;
+        margin-left: 25px;
+        font-size: 15px;
+    }
+
+    .EmployeeTextDark {
+        line-height: 1.6;
+        text-align: left;
+        font-size: 18px;
+        color: #f3eee6;
+    }
+    
+    .EmployeeSignatureDark {
+        line-height: 1.6;
+        text-align: left;
+        margin-top: 25px;
+        margin-left: 25px;
+        font-size: 15px;
+        color: #f3eee6;
+    }
+
+    .Review {
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+
+    .MainContent {
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,103 @@
+.Section {
+    padding: 64px 0;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.Background {
+    width: 100%;
+    background-color: #69a88d;
+    height: calc(100vh * 0.8);
+    margin-top: 30px;
+    position: absolute;
+}
+
+.Container {
+    font-size: 17px;
+    line-height: 24px;
+    width: 65%;
+    max-width: 1140px;
+    display: table;
+    position: relative;
+    top: -70px;
+    padding: 32px 40px;
+    box-shadow: 0 16px 32px 0 rgba(0,42,77,.15);
+    background-color: #f3eee6;
+}
+
+.UpperText {
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.UpperText h2 {
+    font-size: 20px;
+    color: #002a4d;
+}
+
+.UpperText p {
+    font-size: 15px;
+}
+
+.LowerText {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.LowerText h1 {
+    color: #002a4d;
+    line-height: 1.1;
+    text-align: center;
+    width: 100%;
+}
+
+.LowerText h2 {
+    font-size: 20px;
+    color: #002a4d;
+}
+
+.LowerText p {
+    font-size: 15px;
+}
+
+.LowerContainer {
+    max-width: 95%;
+    margin: 10px;
+}
+
+@media (min-width: 768px) {
+    .Background {
+        height: calc(100vh * 0.5);
+    }
+
+    .Container {
+        width: 55%;
+        padding: 40px 132px;
+        top: -15%;
+    }
+
+    .LowerContainer {
+        max-width: 45%;
+    }
+}
+
+@media (min-height: 1023px) {
+    .Background {
+        height: calc(100vh * 0.3);
+    }
+}
+
+@media (min-width: 1680px) {
+    .Background {
+        height: calc(100vh * 0.3);
+    }
+}
+
+@media (min-width: 1920px) {
+    .Background {
+        height: calc(100vh * 0.2);
+    }
+}
