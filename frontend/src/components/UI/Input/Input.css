@@ -1,0 +1,85 @@
+.Input {
+    width: 75%;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.Label {
+    /* font-weight: bold; */
+    /* display: block; */
+    /* margin-bottom: 8px; */
+    font-family: inherit;
+    font-size: 15px;
+    color: #69a88d;
+}
+
+.Label:focus {
+    color: #69a88d;
+}
+
+.InputElement {
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.InputElement:focus {
+    outline: none;
+    background-color: #ccc;
+}
+
+.NotchedOutline {
+    border-color: #69a88d !important;
+    transition: .25s ease-in;
+    transition: .25s ease-out;
+}
+
+.Focused {
+    color: #69a88d !important;
+    transition: .25s ease-in-out;
+}
+
+.Select {
+    border-color: #69a88d !important;
+    color: red;
+    
+}
+
+.FormControl .MuiOutlinedInput-notchedOutline {
+    border-color: red;
+}
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.Options {
+    background-color: #f3eee6;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.OptionsDark {
+    background-color: #212121;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.Autocomplete {
+    font-family: inherit;
+}
+
+.Autocomplete .span {
+    font-size: 50px;
+}
+
+.Test {
+    background-color: red;
+}
