@@ -1,0 +1,43 @@
+.Dialog {
+    padding: 50px;
+    border-radius: 16px;
+}
+
+.DialogAmenities {
+    padding: 50px;
+    border-radius: 16px;
+    max-height: 500px;
+}
+
+.DialogTitle {
+    padding: 0;
+}
+
+.FullDialog {
+    padding: 30px 0px;
+}
+
+.Close {
+    position: sticky;
+    top: 0px;
+    margin-right: -20px;
+    left: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Close svg {
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.Close:hover svg {
+    background-color: #f3eee6;
+}
+
+@media(max-width: 1023px){
+    .PaperFullScreen {
+        height: fit-content;
+    }
+}
