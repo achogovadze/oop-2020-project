@@ -1,11 +1,8 @@
 package Servlets;
 
 import Classes.ApartmentInfo;
-import Classes.Booking;
 import Database.ApartmentsDB;
-import Database.BookingsDB;
-import Database.UsersDB;
-import com.google.gson.JsonObject;
+import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,30 +12,29 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-@WebServlet(name = "deleteApartment", urlPatterns = "/deleteApartment")
-public class deleteApartmentServlet extends HttpServlet {
+@WebServlet(name = "getApartmentInfoServlet", urlPatterns = "/getApartmentInfo")
+public class getApartmentInfoServlet extends HttpServlet {
+    private Gson gson = new Gson();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-       Integer apartmentId = Integer.valueOf(request.getParameter("apartmentId"));
-        JsonObject json = new JsonObject();
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, PATCH, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         try {
-            BookingsDB bookingsDB = new BookingsDB();
             ApartmentsDB apartmentsDB = new ApartmentsDB();
-            if(bookingsDB.deleteBooking(apartmentId) && apartmentsDB.deleteApartmentInfo(apartmentId) &&
-                    apartmentsDB.deleteApartment(apartmentId)) {
-                        json.addProperty("message", "successfully");
-            } else {
-                json.addProperty("message", "Failed");
-            }
+            Integer apartmentId = Integer.parseInt(request.getParameter("apartmentId"));
+            ApartmentInfo currentInfo = apartmentsDB.getApartmentInfo(apartmentId);
+            String apartmentsJsonString = this.gson.toJson(currentInfo);
             PrintWriter out = response.getWriter();
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            out.print(json);
+            out.print(apartmentsJsonString);
             out.flush();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

@@ -23,6 +23,7 @@ public class addApartmentServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         JsonObject json = new JsonObject();
         Integer userId = Integer.valueOf(request.getParameter("user_id"));
         try {

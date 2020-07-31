@@ -29,6 +29,7 @@ public class addBookingServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
             String checkInDateString = request.getParameter("check_in_date");
             String checkOutDateString = request.getParameter("check_out_date");
             Integer userId = Integer.parseInt(request.getParameter("user_id"));

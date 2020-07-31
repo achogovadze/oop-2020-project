@@ -1,40 +1,37 @@
 package Servlets;
 
-import Classes.ApartmentInfo;
-import Classes.Booking;
-import Database.ApartmentsDB;
-import Database.BookingsDB;
+import Classes.User;
 import Database.UsersDB;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-@WebServlet(name = "deleteApartment", urlPatterns = "/deleteApartment")
-public class deleteApartmentServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
+@WebServlet(name = "getUserServlet", urlPatterns = "/getUserServlet")
+public class getUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, PATCH, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        String email = request.getParameter("email");
 
-       Integer apartmentId = Integer.valueOf(request.getParameter("apartmentId"));
         JsonObject json = new JsonObject();
         try {
-            BookingsDB bookingsDB = new BookingsDB();
-            ApartmentsDB apartmentsDB = new ApartmentsDB();
-            if(bookingsDB.deleteBooking(apartmentId) && apartmentsDB.deleteApartmentInfo(apartmentId) &&
-                    apartmentsDB.deleteApartment(apartmentId)) {
-                        json.addProperty("message", "successfully");
-            } else {
-                json.addProperty("message", "Failed");
-            }
+            UsersDB usersDB = new UsersDB();
+            User cur = usersDB.getUser(email);
+            json.addProperty("id", cur.getUserId());
             PrintWriter out = response.getWriter();
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
@@ -45,5 +42,9 @@ public class deleteApartmentServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }
