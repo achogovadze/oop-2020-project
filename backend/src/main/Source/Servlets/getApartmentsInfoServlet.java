@@ -23,6 +23,9 @@ public class getApartmentsInfoServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, PATCH, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         try {
             ApartmentsDB apartmentsDB = new ApartmentsDB();
             //String cityEntered = request.getParameter("cityEntered") --jspshi iqneba requesad.

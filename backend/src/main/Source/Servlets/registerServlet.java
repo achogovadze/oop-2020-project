@@ -19,26 +19,19 @@ public class registerServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String firstName = request.getParameter("first_name");
-//        String lastName = request.getParameter("last_name");
-//        String birthDate = request.getParameter("birth_date");
-//        String email = request.getParameter("email");
-//        String password = request.getParameter("password");
-//        String phoneNumber = request.getParameter("phone_number");
-//        String country = request.getParameter("country");
-//        String city = request.getParameter("city");
-//        String address = request.getParameter("address");
-//        String userRole = request.getParameter("user_role");
-        String firstName = "Zaza";
-        String lastName = "Gelashvili";
-        String birthDate = "1958-07-13";
-        String email = "z.gelashvili@freeuni.edu.ge";
-        String password = "gelasha123";
-        String phoneNumber = "568515523";
-        String country = "Georgia";
-        String city = "Tbilisi";
-        String address = "Aghmashenebeli Avenue";
-        String userRole = "Lecturer";
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, PATCH, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        String firstName = request.getParameter("first_name");
+        String lastName = request.getParameter("last_name");
+        String birthDate = request.getParameter("birth_date");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String phoneNumber = request.getParameter("phone_number");
+        String country = request.getParameter("country");
+        String city = request.getParameter("city");
+        String address = request.getParameter("address");
+        String userRole = request.getParameter("user_role");
         JsonObject json = new JsonObject();
         try {
             UsersDB usersDB = new UsersDB();
