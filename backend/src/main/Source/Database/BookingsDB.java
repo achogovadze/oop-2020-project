@@ -53,6 +53,8 @@ public class BookingsDB {
             stm.setString(4, checkOutDate);
             stm.setDouble(5, totalPrice);
             stm.setString(6, paymentCurrency);
+            stm.executeUpdate();
+            commit();
             return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
