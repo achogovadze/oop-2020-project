@@ -1,0 +1,14 @@
+.List {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    min-width: calc(100vw - 20px);
+    justify-content: space-evenly;
+}
+
+@media(min-width: 1024px) {
+    .List {
+    min-width: calc(50vw - 20px);
+    max-width: calc(50vw);
+    }   
+}
