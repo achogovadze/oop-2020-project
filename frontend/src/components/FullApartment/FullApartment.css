@@ -1,0 +1,131 @@
+.FullApartmentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 85%;
+}
+
+.IntroContentContainer {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ImagesView {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.IntroContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Title h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: start;
+}
+
+.TitleRating {
+    display: flex;
+    align-items: center;
+}
+
+.TitleRating svg {
+    width: 15px;
+    color: #69a88d;
+}
+
+.TitleRating p {
+    font-size: 12px;
+    text-align: start;
+    margin-left: 5px;
+}
+
+.IntroImages {
+    display: none;
+}
+
+.SideBooking {
+    display: none;
+}
+
+.Info {
+    width: 90%;
+}
+
+.SliderForMobile {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .IntroImages {
+        display: flex;
+        justify-content: center;
+    }
+    .SideBooking {
+        display: flex;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border: 1px solid #ccd6dd;
+        border-radius: 16px;
+        top: 30%;
+        position: sticky;
+        padding: 20px;
+        flex-direction: column;
+    }
+    .SliderForMobile {
+        display: none;
+    }
+    .IntroContentContainer {
+        padding: 20px 60px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .Info {
+        width: 60%;
+    }
+}
+
+.Delete {
+    background-color: white;
+    border-radius: 8px;
+    height: 20px;
+    padding: 8px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.Delete:hover {
+    cursor: pointer;
+}
+
+.TitleContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Book {
+    height: 30px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #69a88d;
+    color: #f3eee6;
+    justify-content: center;
+    margin-top: 50px;
+    cursor: pointer;
+}

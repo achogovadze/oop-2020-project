@@ -1,0 +1,19 @@
+.ApartmentInfo {
+    padding: 10px
+}
+
+.Text {
+    display: block;
+    width: 100%;
+    word-break: break-all;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.7;
+    color: grey;
+}
+
+.Divider {
+    margin-top: 15px;
+    border-top: 1px solid #DDDDDD;
+    padding: 20px 0px;
+}
