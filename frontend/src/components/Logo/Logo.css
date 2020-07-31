@@ -1,0 +1,14 @@
+.Logo {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.Logo img {
+    height: 100%;
+}
+
+@media (max-width: 1023px) {
+    .Logo {
+        display: none;
+    }
+}

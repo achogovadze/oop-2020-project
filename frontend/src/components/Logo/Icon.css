@@ -1,0 +1,14 @@
+.Icon {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.IconImage {
+    height: 100%;
+}
+
+@media (min-width: 1024px) {
+    .Icon {
+        display: none;
+    }
+}
