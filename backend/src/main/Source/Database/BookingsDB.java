@@ -64,14 +64,14 @@ public class BookingsDB {
 
     public List<Booking> getBookings(Integer apartmentId) throws SQLException {
         List<Booking> result = new ArrayList<>();
-        PreparedStatement stm = connection.prepareStatement("SELECT * FROM bookings WHERE apartment_id=1");
+        PreparedStatement stm = connection.prepareStatement("SELECT * FROM bookings WHERE apartment_id = " + apartmentId);
         ResultSet res = stm.executeQuery();
 
         while (res.next()) {
             Booking booking = new Booking(
                     res.getInt(1),
-                    res.getInt(2),
                     res.getInt(3),
+                    res.getInt(2),
                     res.getString(4),
                     res.getString(5),
                     res.getDouble(6),
