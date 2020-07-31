@@ -29,8 +29,7 @@ public class getApartmentServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         try {
             ApartmentsDB apartmentsDB = new ApartmentsDB();
-            //String apartmentId = request.getParameter("apartmentId") --jspshi iqneba requestad.
-            Integer apartmentId = 1;
+            Integer apartmentId = Integer.valueOf(request.getParameter("apartmentId"));
             Apartment apartment = apartmentsDB.getApartment(apartmentId);
             String apartmentsJsonString = this.gson.toJson(apartment);
             PrintWriter out = response.getWriter();

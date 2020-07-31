@@ -30,9 +30,8 @@ public class getBookingServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         try {
             BookingsDB bookingsDB = new BookingsDB();
-//            String apartmentIdString = request.getParameter("apartmentId");
-//            Integer apartmentId = Integer.parseInt(apartmentIdString);
-            List<Booking> bookings = bookingsDB.getBookings(1);
+            Integer apartmentId = Integer.valueOf(request.getParameter("apartmentId"));
+            List<Booking> bookings = bookingsDB.getBookings(apartmentId);
             String bookingsJsonString = this.gson.toJson(bookings);
             PrintWriter out = response.getWriter();
             response.setContentType("application/json");

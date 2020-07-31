@@ -28,8 +28,7 @@ public class getApartmentsInfoServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         try {
             ApartmentsDB apartmentsDB = new ApartmentsDB();
-            //String cityEntered = request.getParameter("cityEntered") --jspshi iqneba requesad.
-            String cityEntered = "Zaodi";
+            String cityEntered = request.getParameter("cityEntered");
             List<Integer> apartments = new ArrayList<>();
 
             if(cityEntered == "allApartments") {
