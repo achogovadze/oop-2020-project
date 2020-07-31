@@ -1,0 +1,44 @@
+.ArrangementsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.Arrangements{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media(min-width: 1024px) {
+    .Arrangements{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }   
+}
+
+.CardContent {
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.Title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+.Content {
+    margin: 16px 0px 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.LeftBox {
+    margin-right: 8px;
+    min-width: 30%;
+}
+.RightBox {
+    min-width: 30%;
+}

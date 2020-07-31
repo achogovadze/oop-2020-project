@@ -1,0 +1,71 @@
+.Amenities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.OneAmenity {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 8px 0px;
+}
+
+.OneAmenity svg {
+    margin-right: 5px;
+}
+
+.Button {
+    margin-top: 15px;
+}
+.Title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+.ButtonColor {
+    color: #69a88d;
+    border: 1px solid #69a88d
+}
+
+.ButtonColor:hover {
+    border:  1px solid #69a88d
+}
+
+.Basic {
+    display: flex;
+    flex-direction: column;
+}
+
+.Facilities {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.DialogTitle {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+    color: black;
+}
+.ListItem {
+    display: flex;
+    font-size: 14px;
+    color: #222222;
+    flex-direction: column;
+    padding: 24px 0px;
+    border-bottom: 0.5px solid #DDDDDD;
+}
+
+.SecondaryInfo {
+    color: gray;
+    line-height: 1.7;
+    margin-top: 10px;
+}
