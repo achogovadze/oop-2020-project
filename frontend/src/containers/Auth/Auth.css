@@ -1,0 +1,118 @@
+.Auth {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+    /* box-shadow: 0 2px 3px #ccc; */
+    /* border: 1px solid #eee; */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.SubmitButton {
+    width: 40%;
+    height: 28px;
+    margin-bottom: 30px;
+    background-color: #69a88d;
+    color: #f3eee6;
+    font-family: inherit;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.SubmitButton:hover {
+    background-color: #69a88d;
+    box-shadow: 0 0 6px #444;
+}
+
+.TopText {
+    color: #69a88d;
+}
+
+.Text {
+    margin-top: 0;
+}
+
+.TextDark {
+    margin-top: 0;
+    color: #f3eee6;
+}
+
+.Link {
+    text-decoration: underline;
+    color: grey;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.GifContainer {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .Auth {
+        width: 400px;
+    }
+
+    .TopText {
+        color: #69a88d;
+    }
+
+    .Form {
+        margin-top: 25px;
+        /* border: 1px solid #f3eee6; */
+        border: 1px solid #69a88d;
+        border-radius: 5px;
+    }
+
+    .SubmitButton {
+        width: 40%;
+        height: 28px;
+        margin-bottom: 30px;
+        background-color: #69a88d;
+        color: #f3eee6;
+        font-family: inherit;
+        font-size: 15px;
+        text-transform: capitalize;
+    }
+
+    .SubmitButton:hover {
+        /* background-color: #86c7ab; */
+        background-color: #69a88d;
+        box-shadow: 0 0 6px #444;
+        /* background-color: #fff; */
+        /* box-shadow: 0 16px 32px 0 rgba(0,42,77,.05); */
+    }
+
+    .ChangeButton {
+        color: #f3eee6;
+    }
+
+    .Text {
+        margin-top: 0;
+    }
+
+    .TextDark {
+        margin-top: 0;
+        color: #f3eee6;
+    }
+
+    .Link {
+        text-decoration: underline;
+        color: grey;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .GifContainer {
+        max-height: calc(100vh);
+        display: block;
+    }
+
+    .Gif {
+        max-height: calc(100vh);
+    }
+
+    .OuterContainer {
+        display: flex;
+    }
+}
