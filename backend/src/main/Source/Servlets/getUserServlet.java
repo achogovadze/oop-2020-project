@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @WebServlet(name = "getUserServlet", urlPatterns = "/getUserServlet")
 public class getUserServlet extends HttpServlet {

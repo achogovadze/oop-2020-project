@@ -28,20 +28,21 @@ public class addApartmentServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         JsonObject json = new JsonObject();
         Integer userId = Integer.valueOf(request.getParameter("user_id"));
+        System.out.println(userId + "id");
         try {
             ApartmentsDB apartmentsDB = new ApartmentsDB();
             Integer apartmentId = apartmentsDB.addApartment(userId);
             String country = request.getParameter("country");
             String city = request.getParameter("city");
             String address = request.getParameter("address");
-            Double price = Double.valueOf(request.getParameter("price"));
+            Double price = Double.parseDouble(request.getParameter("price"));
             String propertyType = request.getParameter("property_type");
             String projectType = request.getParameter("project_type");
             String additionalSpace = request.getParameter("additional_space");
-            Double additionalFootage = Double.valueOf(request.getParameter("additional_footage"));
-            Double squareFootage = Double.valueOf(request.getParameter("square_footage"));
+            Double additionalFootage = Double.parseDouble(request.getParameter("additional_footage"));
+            Double squareFootage = Double.parseDouble(request.getParameter("square_footage"));
             String buildingMaterials = request.getParameter("building_materials");
-            Double roomHeight = Double.valueOf(request.getParameter("room_height"));
+            Double roomHeight = Double.parseDouble(request.getParameter("room_height"));
             Integer floorLevel = Integer.valueOf(request.getParameter("floor_level"));
             Integer bedroomsNum = Integer.valueOf(request.getParameter("bedrooms_num"));
             Integer bedsNum = Integer.valueOf(request.getParameter("beds_num"));
@@ -53,7 +54,7 @@ public class addApartmentServlet extends HttpServlet {
             String electricity = request.getParameter("electricity");
             Integer airConditioning = Integer.valueOf(request.getParameter("air_conditioning"));
             String heating = request.getParameter("heating");
-            String washingMachine = request.getParameter("washing_machine");
+            Integer washingMachine = Integer.valueOf(request.getParameter("washing_machine"));
             Integer oven = Integer.valueOf(request.getParameter("oven"));
             Integer dishwasher = Integer.valueOf(request.getParameter("dishwasher"));
             Integer dryer = Integer.valueOf(request.getParameter("dryer"));
@@ -64,14 +65,16 @@ public class addApartmentServlet extends HttpServlet {
             Integer vehicleCharger = Integer.valueOf(request.getParameter("vehicle_charger"));
             Integer pool = Integer.valueOf(request.getParameter("pool"));
             Integer isAvailable = Integer.valueOf(request.getParameter("is_available"));
+            System.out.println("asd");
             String apartmentStatus = request.getParameter("apartment_status");
-            Double latitude = Double.valueOf(request.getParameter("latitude"));
-            Double longitude = Double.valueOf(request.getParameter("longitude"));
+            Double latitude = Double.parseDouble(request.getParameter("latitude"));
+            Double longitude = Double.parseDouble(request.getParameter("longitude"));
             String image1 = request.getParameter("image1");
             String image2 = request.getParameter("image2");
             String image3 = request.getParameter("image3");
             String image4 = request.getParameter("image4");
             String image5 = request.getParameter("image5");
+            System.out.println("Got data");
             if(apartmentsDB.addApartmentInfo(apartmentId, country, city, address, price, propertyType, projectType, apartmentStatus,
                     additionalSpace, additionalFootage, squareFootage, buildingMaterials, roomHeight, floorLevel, bedroomsNum,
                     bedsNum, bathroomsNum, privateBathroom, wifi, water, gas, electricity, airConditioning, heating, washingMachine,
@@ -79,19 +82,25 @@ public class addApartmentServlet extends HttpServlet {
                     apartmentsDB.addImages(apartmentId, image1) && apartmentsDB.addImages(apartmentId, image2) &&
                     apartmentsDB.addImages(apartmentId, image3) && apartmentsDB.addImages(apartmentId, image4) &&
                     apartmentsDB.addImages(apartmentId, image5)){
+                System.out.println("success");
                 json.addProperty("message", "successfully");
             } else {
+                System.out.println("failure");
                 json.addProperty("message", "Failed");
             }
+            System.out.println("ending");
             PrintWriter out = response.getWriter();
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             out.print(json);
             out.flush();
         } catch (ClassNotFoundException e) {
+            System.out.println("error1");
             e.printStackTrace();
         } catch (SQLException e) {
+            System.out.println("error2");
             e.printStackTrace();
         }
+        System.out.println("finish");
     }
 }

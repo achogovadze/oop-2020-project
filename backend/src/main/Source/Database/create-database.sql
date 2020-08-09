@@ -1,4 +1,4 @@
-USE oop_admin;
+USE oop2020;
 
 DROP TABLE IF EXISTS apartment_info;
 DROP TABLE IF EXISTS apartment_rules;
@@ -52,7 +52,7 @@ CREATE TABLE apartment_info (
     electricity char(128),
     air_conditioning int,
     heating char(128),
-    washing_machine char(128),
+    washing_machine int,
     oven int,
     dishwasher int,
     dryer int,

@@ -86,6 +86,19 @@ public class ApartmentsDB {
         return true;
     }
 
+    public boolean deleteApartmentByUser(Integer userId) {
+        try {
+            PreparedStatement stm;
+            stm = connection.prepareStatement("DELETE FROM apartments WHERE user_id = " + userId);
+            stm.executeUpdate();
+            commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
     public boolean addApartmentInfo(Integer apartmentId, String country, String city, String address,
                                     Double price, String propertyType, String projectType, String apartmentStatus,
                                     String additionalSpace, Double additionalFootage, Double squareFootage, String buildingMaterials,
@@ -164,6 +177,19 @@ public class ApartmentsDB {
         return true;
     }
 
+    public boolean deleteApartmentInfoByUser(Integer userId) {
+        try {
+            PreparedStatement stm;
+            stm = connection.prepareStatement("DELETE FROM apartment_info where apartment_id in (select apartment_id from apartments where user_id = " + userId + ")");
+            stm.executeUpdate();
+            commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
     public boolean updateApartmentInfo(Integer apartmentId, String country, String city, String address,
                                        Double price, String propertyType, String projectType, String apartmentStatus,
                                        String additionalSpace, Double additionalFootage, Double squareFootage, String buildingMaterials,
@@ -213,7 +239,7 @@ public class ApartmentsDB {
             toAdd.add("address = \"" + address + "\"");
         }
         if (!apartmentInfo.getPrice().equals(price)) {
-            toAdd.add("price_usd = " + price);
+            toAdd.add("price = " + price);
         }
         if (!apartmentInfo.getPropertyType().equals(propertyType)) {
             toAdd.add("property_type = \"" + propertyType + "\"");
@@ -264,7 +290,7 @@ public class ApartmentsDB {
             toAdd.add("electricity = \"" + electricity + "\"");
         }
         if (!apartmentInfo.getAirCondition().equals(airCondition)) {
-            toAdd.add("air_conditioning = " + airCondition);
+            toAdd.add("air_condition = " + airCondition);
         }
         if (!apartmentInfo.getHeating().equals(heating)) {
             toAdd.add("heating = \"" + heating + "\"");
@@ -339,44 +365,44 @@ public class ApartmentsDB {
         }
         if (s.next()) {
             ApartmentInfo apartmentInfo = new ApartmentInfo(
-            s.getInt(1),
-            s.getString(2),
-            s.getString(3),
-            s.getString(4),
-            s.getDouble(5),
-            s.getString(6),
-            s.getString(7),
-            s.getString(8),
-            s.getDouble(9),
-            s.getDouble(10),
-            s.getString(11),
-            s.getDouble(12),
-            s.getInt(13),
-            s.getInt(14),
-            s.getInt(15),
-            s.getInt(16),
-            s.getInt(17),
-            s.getInt(18),
-            s.getString(19),
-            s.getString(20),
-            s.getString(21),
-            s.getInt(22),
-            s.getString(23),
-            s.getInt(24),
-            s.getInt(25),
-            s.getInt(26),
-            s.getInt(27),
-            s.getInt(28),
-            s.getInt(29),
-            s.getInt(30),
-            s.getInt(31),
-            s.getInt(32),
-            s.getInt(33),
-            s.getInt(34),
-            s.getString(35),
-            s.getDouble(36),
-            s.getDouble(37),
-            imagesList);
+                    s.getInt(1),
+                    s.getString(2),
+                    s.getString(3),
+                    s.getString(4),
+                    s.getDouble(5),
+                    s.getString(6),
+                    s.getString(7),
+                    s.getString(8),
+                    s.getDouble(9),
+                    s.getDouble(10),
+                    s.getString(11),
+                    s.getDouble(12),
+                    s.getInt(13),
+                    s.getInt(14),
+                    s.getInt(15),
+                    s.getInt(16),
+                    s.getInt(17),
+                    s.getInt(18),
+                    s.getString(19),
+                    s.getString(20),
+                    s.getString(21),
+                    s.getInt(22),
+                    s.getString(23),
+                    s.getInt(24),
+                    s.getInt(25),
+                    s.getInt(26),
+                    s.getInt(27),
+                    s.getInt(28),
+                    s.getInt(29),
+                    s.getInt(30),
+                    s.getInt(31),
+                    s.getInt(32),
+                    s.getInt(33),
+                    s.getInt(34),
+                    s.getString(35),
+                    s.getDouble(36),
+                    s.getDouble(37),
+                    imagesList);
             return apartmentInfo;
         }
         return null;
@@ -411,5 +437,22 @@ public class ApartmentsDB {
             e.printStackTrace();
         }
         return apartmentIDs;
+    }
+
+    public boolean addImages(Integer apartmentId, String link) {
+        String query = "INSERT INTO images (apartment_id, image_link) " +
+                "VALUES (?, ?);";
+        PreparedStatement s;
+        try {
+            s = connection.prepareStatement(query);
+            s.setInt(1, apartmentId);
+            s.setString(2, link);
+            s.executeUpdate();
+            commit();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
